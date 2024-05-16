@@ -7,7 +7,7 @@ def interpret_as_signed_16bit(value):
     return value
 
 # Configuración MODBUS TCP/IP
-client = ModbusTcpClient('192.168.1.124', port=502)  # Reemplazar IP y puerto
+client = ModbusTcpClient('192.168.1.124', port=502)  # Reemplazar IP y puerto del Indicador de peso
 
 connection = client.connect()
 
@@ -34,7 +34,7 @@ if connection:
                 else:
                     print("Error al leer los registros")
 
-                time.sleep(0.01)  # Ajuste de velocidad de consultas en segundos
+                time.sleep(0.1)  # Ajuste de velocidad de consultas en segundos
 
             except Exception as e:
                 print(f"Excepción al leer los registros: {e}")
